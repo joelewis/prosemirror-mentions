@@ -1,0 +1,40 @@
+{
+  "name": "prosemirror-mentions",
+  "version": "0.1.1",
+  "description": "ProseMirror plugin for enabling @mentions & #hashtags",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "peerDependencies": {
+    "prosemirror-state": "^1.2.2",
+    "prosemirror-view": "^1.4.2"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "rollup": "^0.50.1",
+    "rollup-plugin-babel": "^3.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelewis/prosemirror-mentions.git"
+  },
+  "keywords": [
+    "ProseMirror",
+    "Plugin",
+    "Mention",
+    "Hashtag"
+  ],
+  "author": "Joe Lewis <lewis.joe.18@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joelewis/prosemirror-mentions/issues"
+  },
+  "homepage": "https://github.com/joelewis/prosemirror-mentions#readme"
+}
