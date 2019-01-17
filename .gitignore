@@ -7,6 +7,8 @@
 # dependencies
 /node_modules
 /example/node_modules
+/example/dist/*.js
+/example/dist/*.map
 
 # misc.
 npm-debug.log*

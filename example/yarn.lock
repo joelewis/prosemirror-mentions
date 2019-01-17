@@ -2799,8 +2799,10 @@ prosemirror-markdown@^1.1.1:
     markdown-it "^8.4.2"
     prosemirror-model "^1.0.0"
 
-"prosemirror-mentions@file:..":
-  version "0.1.1"
+prosemirror-mentions@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/prosemirror-mentions/-/prosemirror-mentions-0.2.1.tgz#e5b231c5bce8a3983ebe35ed8e4c0ea2a7a306a9"
+  integrity sha512-i5eBrtKelRfgOynbBTcXljOdzkIE0TqdL5GSfwhVtLBb8W94M1lvrMICsRHNnkChLOAt64W/yYycdJNJir6uww==
 
 prosemirror-menu@^1.0.0:
   version "1.0.5"
