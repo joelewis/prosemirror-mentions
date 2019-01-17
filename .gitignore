@@ -6,6 +6,7 @@
 
 # dependencies
 /node_modules
+/example/node_modules
 
 # misc.
 npm-debug.log*

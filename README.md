@@ -4,7 +4,9 @@ A [ProseMirror](https://prosemirror.net/) plugin that enables @mentions and #has
 
 Alternative: [https://github.com/quartzy/prosemirror-suggestions](https://github.com/quartzy/prosemirror-suggestions)
 
-While prosemirror-suggestions is a lighter weight plugin, that holds no opinions on the UI, prosemirror-mentions eases out the implementation. It comes with all batteries included: default dropdown UI, behaviour handling, support for async fetching of suggestions, etc. making it easier to enable @mentions and #hashtags by customizing the default configuration.
+[prosemirror-suggestions](https://github.com/quartzy/prosemirror-suggestions) is a lighter alternative that comes with the bare minimum without any bells and whistles. It is upto you to implement common UI behavior handling.
+
+[prosemirror-mentions](https://github.com/joelewis/prosemirror-mentions) is a fully packed plugin. It comes with all batteries included: default dropdown UI, behaviour handling, support for async fetching of suggestions, etc. All you need to do is configure options to suit your needs.
 
 ## Installation
 

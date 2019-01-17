@@ -9,12 +9,12 @@ import { Decoration, DecorationSet } from 'prosemirror-view';
  * @returns {Object}
  */
 export function getRegexp(mentionTrigger, hashtagTrigger, allowSpace) {
-    const mention = allowSpace
+    var mention = allowSpace
       ? new RegExp('(^|\\s)' + mentionTrigger + '([\\w-\\+]+\\s?[\\w-\\+]*)$')
       : new RegExp('(^|\\s)' + mentionTrigger + '([\\w-\\+]+)$');
 
     // hashtags should never allow spaces. I mean, what's the point of allowing spaces in hashtags?
-    const tag = new RegExp('(^|\\s)' + hashtagTrigger + '([\\w-]+)$');
+    var tag = new RegExp('(^|\\s)' + hashtagTrigger + '([\\w-]+)$');
 
     return  {
         mention: mention,
@@ -139,6 +139,24 @@ export function getMentionsPlugin(opts) {
     
     var showList = function(view, state, suggestions, opts) {
         el.innerHTML = opts.getSuggestionsHTML(suggestions, state.type);
+
+        // attach new item event handlers
+        el.querySelectorAll('.suggestion-item').forEach(function (itemNode, index) {
+            itemNode.addEventListener('click', function() {
+                select(view, state, opts);
+                view.focus();
+            });
+            // TODO: setIndex() needlessly queries. 
+            // We already have the itemNode. SHOULD OPTIMIZE.
+            itemNode.addEventListener('mouseover', function() {
+                setIndex(index, state, opts);
+            });
+            itemNode.addEventListener('mouseout', function() {
+                setIndex(index, state, opts);
+            });
+        });
+
+        // highlight first element by default - like Facebook.
         addClassAtIndex(state.index, opts.activeClass)
         
         // get current @mention span left and top.
@@ -178,6 +196,12 @@ export function getMentionsPlugin(opts) {
         var prevItem = itemList[index];
         prevItem.classList.add(className);
     }
+
+    var setIndex = function(index, state, opts) {
+        removeClassAtIndex(state.index, opts.activeClass);
+        state.index = index;
+        addClassAtIndex(state.index, opts.activeClass);
+    };
 
     var goNext = function(view, state, opts) {
         removeClassAtIndex(state.index, opts.activeClass)
