@@ -25,7 +25,7 @@ var mentionPlugin = getMentionsPlugin({
       setTimeout(() => {
         if (type === 'mention') {
           // pass dummy mention suggestions
-          done([{name: 'John Doe', zuid: '101', email: 'joe@gmail.com'}, {name: 'Joe Lewis', zuid: '102', email: 'lewis@gmail.com'}])
+          done([{name: 'John Doe', id: '101', email: 'joe@gmail.com'}, {name: 'Joe Lewis', id: '102', email: 'lewis@gmail.com'}])
         } else {
           // pass dummy tag suggestions
           done([{tag: 'WikiLeaks'}, {tag: 'NetNeutrality'}])
