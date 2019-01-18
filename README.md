@@ -153,7 +153,7 @@ npm run watch
 
 - [Joe Lewis](https://github.com/joelewis)
 
-## TODO:
+## Pending Tasks
 
 `grep` the repository for "TODO:"
 
