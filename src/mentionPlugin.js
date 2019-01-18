@@ -231,7 +231,7 @@ export function getMentionsPlugin(opts) {
     if (state.type === "mention") {
       attrs = {
         name: item.name,
-        zuid: item.zuid,
+        id: item.id,
         email: item.email
       };
     } else {

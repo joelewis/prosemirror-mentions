@@ -7,7 +7,7 @@ export const mentionNode = {
   atom: true,
 
   attrs: {
-    zuid: "",
+    id: "",
     name: "",
     email: ""
   },
@@ -19,7 +19,7 @@ export const mentionNode = {
     return [
       "span",
       {
-        "data-mention-zuid": node.attrs.zuid,
+        "data-mention-id": node.attrs.id,
         "data-mention-name": node.attrs.name,
         "data-mention-email": node.attrs.email,
         class: "prosemirror-mention-node"
@@ -31,14 +31,14 @@ export const mentionNode = {
   parseDOM: [
     {
       // match tag with following CSS Selector
-      tag: "span[data-mention-zuid][data-mention-name][data-mention-email]",
+      tag: "span[data-mention-id][data-mention-name][data-mention-email]",
 
       getAttrs: dom => {
-        var zuid = dom.getAttribute("data-mention-zuid");
+        var id = dom.getAttribute("data-mention-id");
         var name = dom.getAttribute("data-mention-name");
         var email = dom.getAttribute("data-mention-email");
         return {
-          zuid: zuid,
+          id: id,
           name: name,
           email: email
         };

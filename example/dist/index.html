@@ -1,6 +1,5 @@
-<!doctype html>
-<meta charset=utf8>
-<link rel=stylesheet href="https://prosemirror.net/css/editor.css">
+<!DOCTYPE html> <meta charset="utf8" />
+<link rel="stylesheet" href="https://prosemirror.net/css/editor.css" />
 <script src="https://prosemirror.net/examples/prosemirror.js"></script>
 
 <script src="index.js" defer></script>
@@ -19,39 +18,56 @@
   }
 
   .prosemirror-suggestion {
-    background: rgba(0, 0, 0, 0.05); border: 1px solid #999;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid #999;
   }
 
   .suggestion-item-list {
-      background: #fff;
-      border: 1px solid #999;
+    background: #fff;
+    border: 1px solid #999;
   }
 
   .suggestion-item {
-      padding: 5px;
+    padding: 5px;
   }
   .suggestion-item:before {
-      border-top: 1px solid;
+    border-top: 1px solid;
   }
 </style>
 
-<div id=editor style="margin-bottom: 23px"></div>
+<div id="editor" style="margin-bottom: 23px"></div>
 
 <div style="display: none" id="content">
   <h3>Hello ProseMirror</h3>
 
-  <p>This is editable text. You can use <span data-mention-zuid="101" data-mention-name="Mention" data-mention-email="mention@mail.com">@Mentions</span> as well as specify <span data-tag="hash-tags">tags</span> using this prosemirror plugin. You can focus it and start typing.</p>
+  <p>
+    This is editable text. You can use
+    <span
+      data-mention-id="101"
+      data-mention-name="Mention"
+      data-mention-email="mention@mail.com"
+      >@Mentions</span
+    >
+    as well as specify <span data-tag="hash-tags">tags</span> using this
+    prosemirror plugin. You can focus it and start typing.
+  </p>
 
-  <p>To apply styling, you can select a piece of text and manipulate
-  its styling from the menu. The basic schema
-  supports <em>emphasis</em>, <strong>strong
-  text</strong>, <a href="http://marijnhaverbeke.nl/blog">links</a>, <code>code
-  font</code>, and <img src="/img/smiley.png"> images.</p>
+  <p>
+    To apply styling, you can select a piece of text and manipulate its styling
+    from the menu. The basic schema supports <em>emphasis</em>,
+    <strong>strong text</strong>,
+    <a href="http://marijnhaverbeke.nl/blog">links</a>, <code>code font</code>,
+    and <img src="/img/smiley.png" /> images.
+  </p>
 
-  <p>Block-level structure can be manipulated with key bindings (try
-  ctrl-shift-2 to create a level 2 heading, or enter in an empty
-  textblock to exit the parent block), or through the menu.</p>
+  <p>
+    Block-level structure can be manipulated with key bindings (try ctrl-shift-2
+    to create a level 2 heading, or enter in an empty textblock to exit the
+    parent block), or through the menu.
+  </p>
 
-  <p>Try using the “list” item in the menu to wrap this paragraph in
-  a numbered list.</p>
+  <p>
+    Try using the “list” item in the menu to wrap this paragraph in a numbered
+    list.
+  </p>
 </div>
