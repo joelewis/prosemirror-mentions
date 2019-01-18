@@ -81,17 +81,72 @@ window.view = new EditorView(document.querySelector("#my-editor-div"), {
 });
 ```
 
-Refer [example application](https://github.com/joelewis/prosemirror-mentions/tree/master/example) for 
+Refer [example application](https://github.com/joelewis/prosemirror-mentions/tree/master/example) for clarifications.
+
+## Complete List of Options
+
+```js
+// default options
+var defaultOpts = {
+  // char for triggering @mention
+  mentionTrigger: "@",
+
+  // char for triggering #tag
+  hashtagTrigger: "#",
+
+  // if true: allows you to type @FirstName LastName with a space in between.
+  allowSpace: true,
+
+  /**
+   * callback to fetch suggestions and return a list of suggestions
+   * @param {String} type - 'mention' or 'tag'
+   * @param {String} text - query text. For e.g @Joh -> text = 'Joh'
+   * @param {Function} done - callback to execute after fetching suggestions (ideally from ajax requests)
+   */
+  getSuggestions: (type, text, done) => {
+    done([]);
+  },
+
+  /**
+   * callback to construct and return a HTML string for a set of suggestions
+   * @param {Array} items - a list of suggestions returned from getSuggestions()
+   * @param {String} type - 'mention' or 'tag'
+   */
+  getSuggestionsHTML: (items, type) =>
+    '<div class="suggestion-item-list">' +
+    items
+      .map(i =>
+        '<div class="suggestion-item">' + type === "mention"
+          ? i.name
+          : i.tag + "</div>"
+      )
+      .join("") +
+    "</div>",
+
+  // css class to add when a .suggestion-item element is active / selected.
+  activeClass: "suggestion-item-active",
+
+  // css class to add to "@Mentioned Text" in editor. Can be used to style, the current active @mention content.
+  suggestionTextClass: "prosemirror-suggestion",
+
+  // Max number of suggestions to show in dropdown UI.
+  // The response from getSuggestions() will be truncated based on this value.
+  maxNoOfSuggestions: 10,
+
+  // debounce timeout for getSuggestions() call when user types continuously
+  delay: 500
+};
+```
 
 ## Development
 
 ```bash
-# Build distributable
 npm run build
 npm run watch
 ```
 
 ## Authors
+
 - [Joe Lewis](https://github.com/joelewis)
 
 ## License
