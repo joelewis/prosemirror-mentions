@@ -16,7 +16,72 @@ npm install prosemirror-mentions
 
 ## Usage
 
-@TODO
+```js
+import {addMentionNodes, addTagNodes, getMentionsPlugin} from 'prosemirror-mentions'
+
+...
+...
+
+var schema = new Schema({
+    nodes: addTagNodes(addMentionNodes(schema.spec.nodes)),
+    marks: schema.spec.marks
+});
+
+...
+...
+
+
+/**
+ * IMPORTANT: outer div's "suggestion-item-list" class is mandatory. The plugin uses this class for querying.
+ * IMPORTANT: inner div's "suggestion-item" class is mandatory too for the same reasons
+ */
+var getMentionSuggestionsHTML = items => '<div class="suggestion-item-list">'+
+  items.map(i => '<div class="suggestion-item">'+i.name+'</div>').join('')+
+'</div>';
+
+/**
+ * IMPORTANT: outer div's "suggestion-item-list" class is mandatory. The plugin uses this class for querying.
+ * IMPORTANT: inner div's "suggestion-item" class is mandatory too for the same reasons
+ */
+var getTagSuggestionsHTML = items => '<div class="suggestion-item-list">'+
+  items.map(i => '<div class="suggestion-item">'+i.tag+'</div>').join('')+
+'</div>';
+
+var plugins = [/* A list of other plugins */]
+
+var mentionPlugin = getMentionsPlugin({
+    getSuggestions: (type, text, done) => {
+      setTimeout(() => {
+        if (type === 'mention') {
+          // pass dummy mention suggestions
+          done([{name: 'John Doe', zuid: '101', email: 'joe@gmail.com'}, {name: 'Joe Lewis', zuid: '102', email: 'lewis@gmail.com'}])
+        } else {
+          // pass dummy tag suggestions
+          done([{tag: 'WikiLeaks'}, {tag: 'NetNeutrality'}])
+        }
+      }, 0);
+    },
+    getSuggestionsHTML: (items, type) =>  {
+      if (type === 'mention') {
+        return getMentionSuggestionsHTML(items)
+      } else if (type === 'tag') {
+        return getTagSuggestionsHTML(items)
+      }
+    }
+});
+
+plugins.unshift(mentionPlugin); // push it before keymap plugin to override keydown handlers
+...
+...
+window.view = new EditorView(document.querySelector("#my-editor-div"), {
+  state: EditorState.create({
+    schema: schema,
+    plugins: plugins
+  })
+});
+```
+
+Refer [example application](https://github.com/joelewis/prosemirror-mentions/tree/master/example) for 
 
 ## Development
 
