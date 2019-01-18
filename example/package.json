@@ -20,7 +20,7 @@
     "prosemirror-schema-list": "^1.0.1",
     "prosemirror-state": "^1.2.2",
     "prosemirror-view": "^1.5.3",
-    "prosemirror-mentions": "^0.2.2",
+    "prosemirror-mentions": "file:../",
     "webpack": "^4.20.0"
   },
   "devDependencies": {

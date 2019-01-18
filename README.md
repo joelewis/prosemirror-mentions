@@ -2,6 +2,8 @@
 
 A [ProseMirror](https://prosemirror.net/) plugin that enables @mentions and #hashtags in a prosemirror view.
 
+![](prosemirror-mentions.gif)
+
 Alternative: [https://github.com/quartzy/prosemirror-suggestions](https://github.com/quartzy/prosemirror-suggestions)
 
 [prosemirror-suggestions](https://github.com/quartzy/prosemirror-suggestions) is a lighter alternative that comes with the bare minimum without any bells and whistles. It is upto you to implement common UI behavior handling.
