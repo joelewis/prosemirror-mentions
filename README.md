@@ -153,6 +153,14 @@ npm run watch
 
 - [Joe Lewis](https://github.com/joelewis)
 
+## TODO:
+
+`grep` the repository for "TODO:"
+
+## ISSUES & FEEDBACK
+
+Use Github Issues to file requests and bugs.
+
 ## License
 
 MIT License
