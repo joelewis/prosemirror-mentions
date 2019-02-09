@@ -4,6 +4,8 @@ A [ProseMirror](https://prosemirror.net/) plugin that enables @mentions and #has
 
 ![](prosemirror-mentions.gif)
 
+Demo: [https://star-drug.glitch.me/](https://star-drug.glitch.me/)
+
 Alternative: [https://github.com/quartzy/prosemirror-suggestions](https://github.com/quartzy/prosemirror-suggestions)
 
 ## What's different then?
