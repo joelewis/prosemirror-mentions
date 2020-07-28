@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joelewis/prosemirror-mentions.git"
+    "url": "git+https://github.com/themaven-net/prosemirror-mentions.git"
   },
   "keywords": [
     "ProseMirror",
@@ -43,7 +43,7 @@
   "author": "Joe Lewis <lewis.joe.18@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joelewis/prosemirror-mentions/issues"
+    "url": "https://github.com/themaven-net/prosemirror-mentions/issues"
   },
-  "homepage": "https://github.com/joelewis/prosemirror-mentions#readme"
+  "homepage": "https://github.com/themaven-net/prosemirror-mentions#readme"
 }
