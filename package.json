@@ -1,6 +1,6 @@
 {
   "name": "@themaven-net/prosemirror-mentions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ProseMirror plugin for enabling @mentions & #hashtags",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -45,5 +45,8 @@
   "bugs": {
     "url": "https://github.com/themaven-net/prosemirror-mentions/issues"
   },
-  "homepage": "https://github.com/themaven-net/prosemirror-mentions#readme"
+  "homepage": "https://github.com/themaven-net/prosemirror-mentions#readme",
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
 }
