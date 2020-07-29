@@ -1,6 +1,6 @@
 {
   "name": "@themaven-net/prosemirror-mentions",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "description": "ProseMirror plugin for enabling @mentions & #hashtags",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -27,7 +27,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "watch": "rollup -c -w"
+    "watch": "rollup -c -w",
+    "prepublish": "cp src/*.d.ts dist/"
   },
   "repository": {
     "type": "git",
