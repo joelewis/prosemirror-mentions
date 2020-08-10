@@ -3,6 +3,7 @@ export interface PluginConfig {
   hashtagTrigger: any;
   getSuggestions: any;
   getSuggestionsHTML: any;
+  zIndex: number;
 }
 
 export function getMentionsPlugin(configs: PluginConfig): any;

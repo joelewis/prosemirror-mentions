@@ -183,6 +183,8 @@ export function getMentionsPlugin(opts) {
     el.style.position = "fixed";
     el.style.left = offset.left + "px";
 
+    el.style.zIndex = opts.zIndex;
+
     var top = textDOM.offsetHeight + offset.top;
     el.style.top = top + "px";
     el.style.display = "block";
