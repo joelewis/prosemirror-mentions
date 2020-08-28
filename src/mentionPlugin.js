@@ -115,6 +115,7 @@ var getNewState = function() {
 export function getMentionsPlugin(opts) {
   // default options
   var defaultOpts = {
+    doc: document,
     mentionTrigger: "@",
     hashtagTrigger: "#",
     allowSpace: true,
@@ -135,11 +136,15 @@ export function getMentionsPlugin(opts) {
 
   var opts = Object.assign({}, defaultOpts, opts);
 
+  if (!opts.document) {
+    return null;
+  }
+
   // timeoutId for clearing debounced calls
   var showListTimeoutId = null;
 
   // dropdown element
-  var el = document.createElement("div");
+  var el = opts.document.createElement("div");
 
   // current Idx
   var index = 0;
@@ -179,7 +184,7 @@ export function getMentionsPlugin(opts) {
     var offset = textDOM.getBoundingClientRect();
 
     // TODO: think about outsourcing this positioning logic as options
-    document.body.appendChild(el);
+    opts.document.body.appendChild(el);
     el.style.position = "fixed";
     el.style.left = offset.left + "px";
 
