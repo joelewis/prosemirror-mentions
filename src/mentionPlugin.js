@@ -180,12 +180,14 @@ export function getMentionsPlugin(opts) {
 
     // TODO: think about outsourcing this positioning logic as options
     document.body.appendChild(el);
+    el.classList.add('suggestion-item-container')
     el.style.position = "fixed";
     el.style.left = offset.left + "px";
 
     var top = textDOM.offsetHeight + offset.top;
     el.style.top = top + "px";
     el.style.display = "block";
+    el.style.zIndex = "999999";
   };
 
   var hideList = function() {
