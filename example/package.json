@@ -21,10 +21,10 @@
     "prosemirror-state": "^1.2.2",
     "prosemirror-view": "^1.5.3",
     "prosemirror-mentions": "file:../",
-    "webpack": "^4.20.0"
+    "webpack": "^5.75.0"
   },
   "devDependencies": {
-    "webpack-cli": "^3.1.1",
+    "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^3.1.9"
   }
 }
